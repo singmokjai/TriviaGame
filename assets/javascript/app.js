@@ -1,12 +1,14 @@
+// Hide trivia on page load
+
 window.onload = function() {
 
     $("#Trivia").hide();
 
 }
 
-// Set up timer
+// Set up timer, show trivia on start
 
-var seconds = 30;
+var seconds = 3;
 
     $("#timer").on("click", run);
 
