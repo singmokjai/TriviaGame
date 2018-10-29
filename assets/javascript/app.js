@@ -1,8 +1,16 @@
+window.onload = function() {
+
+    $("#Trivia").hide();
+
+}
+
 // Set up timer
 
-var seconds = 5;
+var seconds = 30;
 
     $("#timer").on("click", run);
+
+    $("#timer").on("click", show);
 
     var timer;
 
@@ -35,6 +43,12 @@ var seconds = 5;
         stop();
         alert("Time's Up!");
 
+    }
+
+    function show() {
+
+        $("#Trivia").show();
+        
     }
 
         
