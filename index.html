@@ -15,47 +15,40 @@
             <h1 id = "headerstyle">Totally Trivial Trivia!</h1>
         </div>
         <br>
-        <div id = "timer">Time Remaining: </div>
+        <button id = "timer"><h2>Start</h2></button>
         <br>
         <div id = "Trivia">
 
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">Question 1: Is Michael Jordan an NBA player?</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                <option></option> 
-                <option id = "Q1T1">True</option>
-                <option id = "Q1F1">False</option>
-                </select>
-            </div>
 
-            <div class="form-group">
-                    <label for="exampleFormControlSelect1">Question 2: Donald Trump is the best president ever!</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                    <option></option> 
-                    <option id = "Q2T2">True</option>
-                    <option id = "Q2F2">False</option>
-                    </select>
+
+                <div class="form-group">
+                        <label for="exampleInputEmail1">Question 1: Michael Jordan is the best basketball player ever!</label>
+                        <Br>
+                    <button type="button" class="btn btn-primary" id = "Q1T1">True</button>
+                    <button type="button" class="btn btn-primary" id = "Q1F1">False</button> 
                 </div>
 
                 <div class="form-group">
-                        <label for="exampleFormControlSelect1">Question 3: Dogs are cool.</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                        <option></option> 
-                        <option id = "Q3T3">True</option>
-                        <option id = "Q3F3">False</option>
-                        </select>
-                    </div>
+                        <label for="exampleInputEmail1">Question 2: Donald Trump is the best president ever!</label>
+                        <Br>
+                    <button type="button" class="btn btn-primary" id = "Q2T2">True</button>
+                    <button type="button" class="btn btn-primary" id = "Q2F2">False</button> 
+                </div>
+
+                <div class="form-group">
+                        <label for="exampleInputEmail1">Question 3: Dogs are cool!</label>
+                        <Br>
+                    <button type="button" class="btn btn-primary" id = "Q3T3">True</button>
+                    <button type="button" class="btn btn-primary" id = "Q3F3">False</button> 
+                </div>
+
+                <div id = "Answers">
+                    <div id = "correct">Correct: </div>
+                    <div id = "incorrect">Incorrect: </div>
+                </div>
 
         </div>
-
-        
-    
-
     </div>
-
-
-
-
 
     <script
 src="https://code.jquery.com/jquery-3.3.1.min.js"
