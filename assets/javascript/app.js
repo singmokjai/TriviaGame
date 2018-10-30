@@ -28,6 +28,14 @@ var seconds = 3;
         seconds--;
         $("#timer").html("<h2>" +"Time Remaining: " + seconds + "</h2>");
 
+        if (seconds === 0) {
+        
+            stop();
+            alert("Time's Up!");
+    
+        }
+
+
     }
 
     // Stop function
@@ -38,14 +46,7 @@ var seconds = 3;
     
     }
 
-    // When seconds hit zero
-
-    if (seconds === 0) {
-        
-        stop();
-        alert("Time's Up!");
-
-    }
+    // Show trivia function
 
     function show() {
 

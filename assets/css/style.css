@@ -8,6 +8,8 @@ body {
 #header {
 
     text-align: center;
+    font-weight: bolder;
+    
 
 }
 
@@ -17,7 +19,7 @@ body {
     border-radius: 50px 20px;
     margin: 0 auto;
     background-color: bisque;
-    box-shadow: 5px 10px #888888;
+    box-shadow: 5px 10px #fa931d;
     width: 600px;
     height: 500px;
 
