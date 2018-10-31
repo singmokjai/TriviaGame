@@ -3,14 +3,23 @@
 window.onload = function() {
 
     $("#questions").hide();
-    $("#true").hide();
-    $("#false").hide();
+    $("#True").hide();
+    $("#False").hide();  
 
+}
+
+// Show trivia function
+
+function show() {
+
+    $("#questions").show();
+    $("#True").show();
+    $("#False").show();    
 }
 
 // Set up timer, show trivia on start
 
-var seconds = 3;
+var seconds = 10;
 
     $("#timer").on("click", run);
 
@@ -45,21 +54,15 @@ var seconds = 3;
         
     }
 
-// Show trivia function
 
-    function show() {
-
-        $("#questions").show();
-        $("#true").show();
-        $("#false").show();
-        
-    }
 
 // Array of questions for trivia
 
 var questions = [
 
     {q: "1) Michael Jordan is the best NBA player ever!", a: "True"},
+    {q: "1) Donald Trump is a great president.", a: "False"},
+    {q: "1) Donald Trump is a great president.", a: "False"},
     {q: "1) Donald Trump is a great president.", a: "False"},
 ];
 
@@ -72,7 +75,17 @@ var incorrect = 0;
 
 var qIndex = 0;
 
-// Functions
+// Function for updating answers
+
+function updateScore() {
+
+    document.querySelector("#correct").innerHTML = "Correct: " + correct;
+
+    document.querySelector("#incorrect").innerHTML = "Incorrect: " + incorrect;
+}
+
+
+// Functions for rendering question
 
 function nextQuestion() {
 
@@ -86,8 +99,20 @@ function nextQuestion() {
 
 nextQuestion();
 
-// Function for 
 
+// When user clicks True/False
+
+    $("#True").on("click", function() {
+
+        var userChoice = $("#True").on("click") = true;
+
+        if (userChoice === questions[qIndex].a) {
+
+            alert("correct!")
+
+        }
+        
+    })
 
 
 
