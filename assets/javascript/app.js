@@ -3,8 +3,8 @@
 window.onload = function() {
 
     $("#questions").hide();
-    $("#True").hide();
-    $("#False").hide();  
+    $("#answerButton").hide();
+    
 
 }
 
@@ -13,8 +13,8 @@ window.onload = function() {
 function show() {
 
     $("#questions").show();
-    $("#True").show();
-    $("#False").show();    
+    $("#answerButton").show();
+    
 }
 
 // Set up timer, show trivia on start
@@ -102,17 +102,21 @@ nextQuestion();
 
 // When user clicks True/False
 
-    $("#True").on("click", function() {
+function buttonClick() {
 
-        var userChoice = $("#True").on("click") = true;
+    var userChoice = $("#answerButton").on("click") 
 
+        console.log(userChoice)
+        
         if (userChoice === questions[qIndex].a) {
 
             alert("correct!")
 
         }
-        
-    })
+}
+
+    $("#answerButton").on("click", buttonClick())
+
 
 
 

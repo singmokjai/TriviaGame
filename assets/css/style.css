@@ -1,7 +1,8 @@
 body {
     margin: 0 auto;
-    background-color: cornflowerblue;
+    background-image: url("https://i.pinimg.com/originals/31/0d/4a/310d4a2f36b4fe4a07a31f5f7759a4d3.jpg");
     padding-top: 50px;
+    background-size: contain;
 
 };
 
@@ -18,9 +19,10 @@ body {
     text-align: center;
     border-radius: 50px 20px;
     margin: 0 auto;
-    background-color: bisque;
     box-shadow: 5px 10px #fa931d;
     width: 600px;
-    height: 500px;
+    height: 525px;
+    background-image: url("https://i.pinimg.com/originals/31/0d/4a/310d4a2f36b4fe4a07a31f5f7759a4d3.jpg");
+    background-size: cover;
 
 }
