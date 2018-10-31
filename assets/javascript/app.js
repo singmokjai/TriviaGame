@@ -3,7 +3,7 @@
 window.onload = function() {
 
     $("#questions").hide();
-    $("#answerButton").hide();
+    $("[id='answerButton']").hide();
     
 
 }
@@ -13,7 +13,7 @@ window.onload = function() {
 function show() {
 
     $("#questions").show();
-    $("#answerButton").show();
+    $("[id='answerButton']").show();
     
 }
 
@@ -104,7 +104,7 @@ nextQuestion();
 
 function buttonClick() {
 
-    var userChoice = $("#answerButton").on("click") 
+    var userChoice = $("[id='answerButton']").on("click") 
 
         console.log(userChoice)
         
@@ -115,7 +115,7 @@ function buttonClick() {
         }
 }
 
-    $("#answerButton").on("click", buttonClick())
+$("[id='answerButton']").on("click", buttonClick())
 
 
 
