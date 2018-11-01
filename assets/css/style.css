@@ -34,3 +34,11 @@ body {
     background-size: cover;
 
 }
+
+#gameover {
+
+    color: gold;
+    font-weight: bolder;
+    font-style: italic;
+
+}

@@ -5,16 +5,23 @@ window.onload = function() {
     $("#questions").hide();
     $("#True").hide();
     $("#False").hide();
+    $("#gameover").hide();
+    $("#correct").hide();
+    $("#incorrect").hide();
     
 }
 
-// Show trivia on start
+// Show trivia on click Start
 
 function show() {
 
     $("#questions").show();
     $("#True").show();
     $("#False").show();
+    $("#gameover").hide();
+    $("#correct").hide();
+    $("#incorrect").hide();
+    nextQuestion();
     
 }
 
@@ -46,8 +53,15 @@ var seconds = 10;
         $("#questions").hide();
         $("#True").hide();
         $("#False").hide();
-        $("#timer").html("<h1>GAME OVER!</h1>");
+        $("#True").html("True");
+        $("#False").html("False");
+        $("#timer").html("<h1>Play Again?</h1>");
+        $("#gameover").show();
+        $("#correct").show();
+        $("#incorrect").show();
         seconds = 10;
+        correct = 0;
+        incorrect = 0;
         
     }
 
@@ -71,6 +85,8 @@ var seconds = 10;
 var questions = [
 
     {q: "1) Michael Jordan is the best NBA player ever!", a: "True"},
+    {q: "1) Donald Trump is a great president.", a: "False"},
+    {q: "1) Donald Trump is a great president.", a: "False"},
     {q: "1) Donald Trump is a great president.", a: "False"},
     {q: "1) Donald Trump is a great president.", a: "False"},
     {q: "1) Donald Trump is a great president.", a: "False"},
@@ -99,16 +115,11 @@ function updateScore() {
 
 function nextQuestion() {
 
-    if (qIndex <= (questions.length -1)) {
+    if (qIndex < (questions.length -1)) {
 
         document.querySelector("#questions").innerHTML = questions[qIndex].q;
     }
 }
-
-// call function to start trivia 
-
-nextQuestion();
-console.log(nextQuestion)
 
 
 // When user clicks True/False
@@ -118,6 +129,7 @@ $("#True").click(function() {
     $("#True").html("Correct!");
     correct++;
     updateScore();
+    nextQuestion();
     
 });
 
@@ -126,6 +138,7 @@ $("#False").click(function() {
     $("#False").html("Incorrect!");
     incorrect++;
     updateScore();
+    nextQuestion();
 
 })
 
