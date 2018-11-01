@@ -8,7 +8,7 @@ window.onload = function() {
     
 }
 
-// Show trivia function
+// Show trivia on start
 
 function show() {
 
@@ -41,6 +41,16 @@ var seconds = 10;
     
     }
 
+    function reset() {
+
+        $("#questions").hide();
+        $("#True").hide();
+        $("#False").hide();
+        $("#timer").html("<h1>GAME OVER!</h1>");
+        seconds = 10;
+        
+    }
+
     function decrement() {
 
         seconds--;
@@ -49,13 +59,12 @@ var seconds = 10;
         if (seconds === 0) {
         
             stop();
-            alert("Time's up!")
+            alert("Time's up!");
+            reset();
             
         }
         
     }
-
-
 
 // Array of questions for trivia
 
@@ -80,11 +89,11 @@ var qIndex = 0;
 
 function updateScore() {
 
-    document.querySelector("#correct").innerHTML = "Correct: " + correct;
+    $("#correct").html("Correct: " + correct);
 
-    document.querySelector("#incorrect").innerHTML = "Incorrect: " + incorrect;
+    $("#incorrect").html("Incorrect: " + incorrect);
+
 }
-
 
 // Functions for rendering question
 
@@ -104,21 +113,19 @@ console.log(nextQuestion)
 
 // When user clicks True/False
 
-
-
 $("#True").click(function() {
 
     $("#True").html("Correct!");
     correct++;
-    $("#correct").html("Correct: " + correct);
-
+    updateScore();
+    
 });
 
 $("#False").click(function() {
 
     $("#False").html("Incorrect!");
     incorrect++;
-    $("#incorrect").html("Incorrect: " + incorrect);
+    updateScore();
 
 })
 
