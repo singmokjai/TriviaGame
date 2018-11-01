@@ -3,9 +3,9 @@
 window.onload = function() {
 
     $("#questions").hide();
-    $("[id='answerButton']").hide();
+    $("#True").hide();
+    $("#False").hide();
     
-
 }
 
 // Show trivia function
@@ -13,7 +13,8 @@ window.onload = function() {
 function show() {
 
     $("#questions").show();
-    $("[id='answerButton']").show();
+    $("#True").show();
+    $("#False").show();
     
 }
 
@@ -98,29 +99,28 @@ function nextQuestion() {
 // call function to start trivia 
 
 nextQuestion();
+console.log(nextQuestion)
 
 
 // When user clicks True/False
 
-function buttonClick() {
-
-    var userChoice = $("[id='answerButton']").on("click") 
-
-        console.log(userChoice)
-        
-        if (userChoice === questions[qIndex].a) {
-
-            alert("correct!")
-
-        }
-}
-
-$("[id='answerButton']").on("click", buttonClick())
 
 
+$("#True").click(function() {
 
+    $("#True").html("Correct!");
+    correct++;
+    $("#correct").html("Correct: " + correct);
 
+});
 
+$("#False").click(function() {
+
+    $("#False").html("Incorrect!");
+    incorrect++;
+    $("#incorrect").html("Incorrect: " + incorrect);
+
+})
 
 
 
