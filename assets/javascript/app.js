@@ -22,6 +22,7 @@ function show() {
     $("#correct").hide();
     $("#incorrect").hide();
     nextQuestion();
+    audio.play();
     
 }
 
@@ -85,12 +86,17 @@ var seconds = 10;
 var questions = [
 
     {q: "1) Michael Jordan is the best NBA player ever!", a: "True"},
-    {q: "1) Donald Trump is a great president.", a: "False"},
-    {q: "1) Donald Trump is a great president.", a: "False"},
-    {q: "1) Donald Trump is a great president.", a: "False"},
-    {q: "1) Donald Trump is a great president.", a: "False"},
-    {q: "1) Donald Trump is a great president.", a: "False"},
+    {q: "2) Donald Trump is a great president.", a: "False"},
+    {q: "3) Coffee is life.", a: "True"},
+    {q: "4) Adults can't breate and swallow at the same time.", a: "True"},
+    {q: "5) Philly cheesesteaks are best in Philly.", a: "True"},
+    {q: "6) An octopus has 2 hearts.", a: "False"},
 ];
+
+// Audio
+
+var audio = new Audio('assets/javascript/super mario bros.mp3')
+
 
 // Variables for right and wrong answers
 
@@ -115,7 +121,7 @@ function updateScore() {
 
 function nextQuestion() {
 
-    if (qIndex < (questions.length -1)) {
+    if (qIndex < (questions.length +1)) {
 
         document.querySelector("#questions").innerHTML = questions[qIndex].q;
     }
