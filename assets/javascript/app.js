@@ -7,8 +7,7 @@ var audio = new Audio('assets/javascript/super mario bros.mp3')
 window.onload = function() {
 
     $("#questions").hide();
-    $("#True").hide();
-    $("#False").hide();
+    $("[id='tfButton']").hide();
     $("#gameover").hide();
     $("#correct").hide();
     $("#incorrect").hide();
@@ -20,8 +19,7 @@ window.onload = function() {
 function show() {
 
     $("#questions").show();
-    $("#True").show();
-    $("#False").show();
+    $("[id='tfButton']").show();
     $("#gameover").hide();
     $("#correct").hide();
     $("#incorrect").hide();
@@ -32,7 +30,7 @@ function show() {
 
 // Set up timer, show trivia on start
 
-var seconds = 10;
+var seconds = 20;
 
     $("#timer").on("click", run);
 
@@ -71,10 +69,7 @@ var seconds = 10;
     function reset() {
 
         $("#questions").hide();
-        $("#True").hide();
-        $("#False").hide();
-        $("#True").html("True");
-        $("#False").html("False");
+        $("[id='tfButton']").hide();
         $("#timer").html("<h1>Play Again?</h1>");
         $("#correct").show();
         $("#incorrect").show();
@@ -100,6 +95,8 @@ var questions = [
 // Variable for holding index of questions
 
 var qIndex = 0;
+
+// Variable for current question
 
 var currentQuestion;
 
@@ -130,7 +127,7 @@ function updateScore() {
 
 // When user clicks True/False
 
-$("#True").click(function() {
+$("[id='tfButton']").click(function() {
 
     currentQuestion = questions[qIndex];
 
@@ -138,7 +135,16 @@ $("#True").click(function() {
 
         correct++;
         updateScore();
-        console.log(currentQuestion)
+        console.log(currentQuestion);
+
+    }
+
+    else if (currentQuestion.a === false) {
+
+        incorrect++;
+        updateScore();
+        console.log(currentQuestion);
+
     }
 
     nextQuestion();
@@ -146,21 +152,6 @@ $("#True").click(function() {
     
 });
 
-$("#False").click(function() {
-
-    currentQuestion = questions[qIndex];
-
-    if (currentQuestion.a === false) {
-
-        incorrect++;
-        updateScore();
-        console.log(currentQuestion)
-    }
-    
-    nextQuestion();
-    qIndex++;
-    
-})
 
 
 
