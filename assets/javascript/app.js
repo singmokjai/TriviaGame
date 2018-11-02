@@ -73,7 +73,7 @@ var seconds = 20;
         $("#timer").html("<h1>Play Again?</h1>");
         $("#correct").show();
         $("#incorrect").show();
-        seconds = 10;
+        seconds = 20;
         correct = 0;
         incorrect = 0;
         qIndex = 0;
