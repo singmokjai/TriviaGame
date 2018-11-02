@@ -53,7 +53,6 @@ var seconds = 10;
     
     }
 
-    
     function decrement() {
 
         seconds--;
@@ -90,20 +89,19 @@ var seconds = 10;
 
 var questions = [
 
-    {q: "1) Michael Jordan is the best NBA player ever!", a: "True"},
-    {q: "2) Donald Trump is a great president.", a: "False"},
-    {q: "3) Coffee is life.", a: "True"},
-    {q: "4) Adults can't breate and swallow at the same time.", a: "True"},
-    {q: "5) Philly cheesesteaks are best in Philly.", a: "True"},
-    {q: "6) An octopus has 2 hearts.", a: "False"},
+    {q: "1) Michael Jordan is the best NBA player ever!", a: true},
+    {q: "2) Donald Trump is a great president.", a: false},
+    {q: "3) Coffee is life.", a: true},
+    {q: "4) Adults can't breathe and swallow at the same time.", a: true},
+    {q: "5) Philly cheesesteaks are best in Philly.", a: true},
+    {q: "6) An octopus has 2 hearts.", a: false},
 ];
-
 
 // Variable for holding index of questions
 
 var qIndex = 0;
 
-
+var currentQuestion;
 
 // Function for rendering question
 
@@ -134,20 +132,31 @@ function updateScore() {
 
 $("#True").click(function() {
 
-    
-    correct++;
-    updateScore();
+    currentQuestion = questions[qIndex];
+
+    if (currentQuestion.a === true) {
+
+        correct++;
+        updateScore();
+        console.log(currentQuestion)
+    }
+
     nextQuestion();
     qIndex++;
-    
     
 });
 
 $("#False").click(function() {
 
+    currentQuestion = questions[qIndex];
+
+    if (currentQuestion.a === false) {
+
+        incorrect++;
+        updateScore();
+        console.log(currentQuestion)
+    }
     
-    incorrect++;
-    updateScore();
     nextQuestion();
     qIndex++;
     
