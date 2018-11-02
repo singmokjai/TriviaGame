@@ -82,6 +82,7 @@ var seconds = 10;
         seconds = 10;
         correct = 0;
         incorrect = 0;
+        qIndex = 0;
         
     }
 
