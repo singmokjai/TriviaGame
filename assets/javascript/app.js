@@ -1,3 +1,7 @@
+// Audio
+
+var audio = new Audio('assets/javascript/super mario bros.mp3')
+
 // Hide trivia on page load
 
 window.onload = function() {
@@ -49,23 +53,7 @@ var seconds = 10;
     
     }
 
-    function reset() {
-
-        $("#questions").hide();
-        $("#True").hide();
-        $("#False").hide();
-        $("#True").html("True");
-        $("#False").html("False");
-        $("#timer").html("<h1>Play Again?</h1>");
-        $("#gameover").show();
-        $("#correct").show();
-        $("#incorrect").show();
-        seconds = 10;
-        correct = 0;
-        incorrect = 0;
-        
-    }
-
+    
     function decrement() {
 
         seconds--;
@@ -81,6 +69,22 @@ var seconds = 10;
         
     }
 
+    function reset() {
+
+        $("#questions").hide();
+        $("#True").hide();
+        $("#False").hide();
+        $("#True").html("True");
+        $("#False").html("False");
+        $("#timer").html("<h1>Play Again?</h1>");
+        $("#correct").show();
+        $("#incorrect").show();
+        seconds = 10;
+        correct = 0;
+        incorrect = 0;
+        
+    }
+
 // Array of questions for trivia
 
 var questions = [
@@ -93,19 +97,27 @@ var questions = [
     {q: "6) An octopus has 2 hearts.", a: "False"},
 ];
 
-// Audio
 
-var audio = new Audio('assets/javascript/super mario bros.mp3')
+// Variable for holding index of questions
 
+var qIndex = 0;
+
+
+
+// Function for rendering question
+
+function nextQuestion() {
+
+    if (qIndex <= (questions.length -1)) {
+        
+        document.querySelector("#questions").innerHTML = questions[qIndex].q;
+    }
+}
 
 // Variables for right and wrong answers
 
 var correct = 0;
 var incorrect = 0;
-
-// Variable for holding index of questions
-
-var qIndex = 0;
 
 // Function for updating answers
 
@@ -117,35 +129,27 @@ function updateScore() {
 
 }
 
-// Functions for rendering question
-
-function nextQuestion() {
-
-    if (qIndex < (questions.length +1)) {
-
-        document.querySelector("#questions").innerHTML = questions[qIndex].q;
-    }
-}
-
-
 // When user clicks True/False
 
 $("#True").click(function() {
 
-    $("#True").html("Correct!");
+    
     correct++;
     updateScore();
     nextQuestion();
+    qIndex++;
+    
     
 });
 
 $("#False").click(function() {
 
-    $("#False").html("Incorrect!");
+    
     incorrect++;
     updateScore();
     nextQuestion();
-
+    qIndex++;
+    
 })
 
 
