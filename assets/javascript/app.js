@@ -7,7 +7,8 @@ var audio = new Audio('assets/javascript/super mario bros.mp3')
 window.onload = function() {
 
     $("#questions").hide();
-    $("[id='tfButton']").hide();
+    $("#True").hide();
+    $("#False").hide();
     $("#gameover").hide();
     $("#correct").hide();
     $("#incorrect").hide();
@@ -19,7 +20,8 @@ window.onload = function() {
 function show() {
 
     $("#questions").show();
-    $("[id='tfButton']").show();
+    $("#True").show();
+    $("#False").show();
     $("#gameover").hide();
     $("#correct").hide();
     $("#incorrect").hide();
@@ -60,6 +62,7 @@ var seconds = 20;
         
             stop();
             alert("Time's up!");
+            updateScore();
             reset();
             
         }
@@ -69,7 +72,8 @@ var seconds = 20;
     function reset() {
 
         $("#questions").hide();
-        $("[id='tfButton']").hide();
+        $("#True").hide();
+        $("#False").hide();
         $("#timer").html("<h1>Play Again?</h1>");
         $("#correct").show();
         $("#incorrect").show();
@@ -127,32 +131,47 @@ function updateScore() {
 
 // When user clicks True/False
 
-$("[id='tfButton']").click(function() {
+$("#True").click(function() {
 
     currentQuestion = questions[qIndex];
 
     if (currentQuestion.a === true) {
 
         correct++;
-        updateScore();
         console.log(currentQuestion);
+        nextQuestion();
+        qIndex++
 
-    }
-
-    else if (currentQuestion.a === false) {
+    } 
+    
+    else {
 
         incorrect++;
-        updateScore();
-        console.log(currentQuestion);
+        nextQuestion();
+        qIndex++
 
     }
 
-    nextQuestion();
-    qIndex++;
-    
 });
 
+$("#False").click(function() {
 
+    currentQuestion = questions[qIndex];
 
+    if (currentQuestion.a === false) {
 
+        correct++;
+        console.log(currentQuestion);
+        nextQuestion();
+        qIndex++
 
+    } 
+    
+    else {
+
+        incorrect++;
+        nextQuestion();
+        qIndex++
+    }
+
+})
