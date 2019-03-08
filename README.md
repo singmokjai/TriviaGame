@@ -1,7 +1,7 @@
 # TriviaGame
 
 A super quick and random Trivia game created with Javascript logic and jQuery for DOM manipulation. Custom themed with super mario :)
-![Trivia pic](Trivia.png)
+![Trivia pic](https://github.com/singmokjai/TriviaGame/blob/master/Trivia.PNG)
 
 # Technologies Used
 
