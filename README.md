@@ -1,4 +1,4 @@
-# TriviaGame
+###### Trivialities
 
 A super quick and random trivia game created with Javascript logic and jQuery for DOM manipulation. Custom themed with super mario :smiley:
 
