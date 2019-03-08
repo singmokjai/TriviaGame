@@ -6,7 +6,7 @@ A super quick and random Trivia game created with Javascript logic and jQuery fo
 
 Javascript, jQuery, HTML, CSS
 
-# Website 
+# Deployed Site 
 
 https://singmokjai.github.io/TriviaGame/
 
