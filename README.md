@@ -12,6 +12,6 @@ Javascript, jQuery, HTML, CSS, Bootstrap
 
 # Deployed Site 
 
-https://singmokjai.github.io/TriviaGame/
+https://singmokjai.github.io/Trivialities/
 
 
